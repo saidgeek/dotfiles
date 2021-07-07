@@ -1,0 +1,10 @@
+require('plugins.packer')
+
+require('plugins.nvim-tree')
+require('plugins.lualine')
+require('plugins.bufferline')
+require('plugins.startify')
+require('plugins.indent-blankline')
+require('plugins.autopairs')
+require('plugins.nvim-treesitter')
+require('plugins.lspsaga')
