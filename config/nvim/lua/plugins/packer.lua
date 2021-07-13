@@ -40,6 +40,9 @@ return require('packer').startup(function()
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use 'hrsh7th/nvim-compe'
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 'nvim-lua/popup.nvim', requires = 'nvim-lua/plenary.nvim' }
   -- navigation
   use 'kyazdani42/nvim-tree.lua'
   -- Theme 

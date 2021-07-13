@@ -23,6 +23,7 @@ set relativenumber		  " Show relative number of current line
 set cursorline			    " Highlight editing line
 set nojs			          " Alwais use one space to join line
 
+set nofoldenable
 set foldmethod=expr		  " Folding lines by expresions
 set foldexpr=nvim_treesitter#foldexpr()
 set foldnestmax=3		    " Maximum nest folding
