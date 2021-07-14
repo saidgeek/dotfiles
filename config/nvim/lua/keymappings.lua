@@ -14,3 +14,9 @@ map('n', 'L', ':BufferLineCyclePrev<CR>', { silent = true })
 
 -- Neogit
 map('n', '<leader>gs', ':Neogit<CR>', { silent = true })
+
+-- Telescope
+map('n', '<leader>ff', ':Telescope find_files<cr>', { silent = true })
+map('n', '<leader>fg', ':Telescope live_grep<cr>', { silent = true })
+map('n', '<leader>fb', ':Telescope buffers<cr>', { silent = true })
+map('n', '<leader>fh', ':Telescope help_tags<cr>', { silent = true })

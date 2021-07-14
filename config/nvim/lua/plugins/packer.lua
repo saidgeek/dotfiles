@@ -34,8 +34,22 @@ return require('packer').startup(function()
   }
   ]]
   use {
+    "ahmedkhalf/lsp-rooter.nvim",
+    config = function()
+      require("lsp-rooter").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+  use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim"
+  }
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
   -- Editor utilities
   use "lukas-reineke/indent-blankline.nvim"
@@ -48,7 +62,10 @@ return require('packer').startup(function()
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'nvim-lua/popup.nvim', requires = 'nvim-lua/plenary.nvim' }
   -- navigation
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
+  }
   -- Theme 
   use 'Shatur/neovim-ayu'
   use 'kyazdani42/nvim-web-devicons'
