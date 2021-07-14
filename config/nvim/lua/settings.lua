@@ -1,13 +1,16 @@
 local opt = require('utils').opt
 
+-- TODO: reafctor to configs
+-- FIX: migrate al configurations to lua
+
 vim.cmd([[
 " General
 "
 set title               " Show name of file editing on title window
 set mouse=			        " enable/disable mosue support: a = all, empty disable
 set noshowmode
-set updatetime=100		  " time of update interval
-set pumblend=30			    " enable pseudo-transparency to popup
+" set updatetime=100		  " time of update interval
+" set pumblend=30			    " enable pseudo-transparency to popup
 set hidden			        " allow switch of buffers if have save
 set noswapfile			    " disable swap files
 set colorcolumn=120		  " set and show limit line

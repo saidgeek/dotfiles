@@ -11,3 +11,6 @@ map('n', '<leader>E', ':NvimTreeFind<CR>', { silent = true })
 map('n', 'Q', ':bdelete<CR>', { silent = true })
 map('n', 'H', ':BufferLineCycleNext<CR>', { silent = true })
 map('n', 'L', ':BufferLineCyclePrev<CR>', { silent = true })
+
+-- Neogit
+map('n', '<leader>gs', ':Neogit<CR>', { silent = true })

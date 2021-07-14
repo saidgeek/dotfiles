@@ -33,6 +33,10 @@ return require('packer').startup(function()
     }
   }
   ]]
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim"
+  }
   -- Editor utilities
   use "lukas-reineke/indent-blankline.nvim"
   use 'windwp/nvim-autopairs'

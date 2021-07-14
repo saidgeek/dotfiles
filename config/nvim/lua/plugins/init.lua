@@ -1,3 +1,4 @@
+-- TODO: Added comments for secctions or utility
 require('plugins.packer')
 
 require('plugins.nvim-tree')
@@ -10,3 +11,5 @@ require('plugins.nvim-treesitter')
 require('plugins.lspsaga')
 require('plugins.nvim-compe')
 require('plugins.neogit')
+require('plugins.todo-comments')
+
