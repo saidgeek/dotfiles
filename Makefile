@@ -10,6 +10,7 @@ install:
 
 symlinks:
 	ln -sf `pwd`/config/nvim/ ~/.config
+	ln -sf `pwd`/tmux.conf ~/.tmux.conf
 	ln -sf `pwd`/config/kitty/ ~/.config
 
 .PHONY: install symlinks setup
