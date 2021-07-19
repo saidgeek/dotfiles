@@ -18,7 +18,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   
   -- utilities
-  use 'mhinz/vim-startify'
+  use 'glepnir/dashboard-nvim'
   use {
     'hoob3rt/lualine.nvim',
     reauires = { 'kyazdani42/nvim-web-devicons', opt = true }

@@ -8,7 +8,7 @@ set('auto_open', 1)
 set('auto_close', 1)
 set('quit_on_open', 1)
 set('update_cwd', 0)
-set('auto_ignore_ft', {'startify'})
+set('auto_ignore_ft', {'dashboard'})
 set('icon_padding', ' ')
 set('show_icons', {
   git = 1,

@@ -9,6 +9,7 @@ set('filetype_exclude', {
   'rst',
   'man',
   'startify',
+  'dashboard',
   'tsplayground'
 })
 

@@ -12,4 +12,5 @@ require('plugins.lspsaga')
 require('plugins.nvim-compe')
 require('plugins.neogit')
 require('plugins.todo-comments')
+require('plugins.dashboard')
 
