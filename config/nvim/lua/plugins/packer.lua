@@ -51,6 +51,12 @@ return require('packer').startup(function()
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    }
+  }
   -- Editor utilities
   use "lukas-reineke/indent-blankline.nvim"
   use 'windwp/nvim-autopairs'

@@ -6,6 +6,8 @@ zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-completions
 
+# this config is verbose temporaly, because is development
+# TODO: remove `--verbose` then is stable
 zplug load --verbose
 
 autoload -U compinit && compinit

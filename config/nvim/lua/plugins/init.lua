@@ -13,4 +13,6 @@ require('plugins.nvim-compe')
 require('plugins.neogit')
 require('plugins.todo-comments')
 require('plugins.dashboard')
+-- require('plugins.telescope')
+require('plugins.gitsigns')
 
