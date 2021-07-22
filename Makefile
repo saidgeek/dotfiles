@@ -12,5 +12,6 @@ symlinks:
 	ln -sf `pwd`/config/nvim/ ~/.config
 	ln -sf `pwd`/tmux.conf ~/.tmux.conf
 	ln -sf `pwd`/config/alacritty/ ~/.config
+	ln -sf `pwd`/zshrc ~/.zshrc
 
 .PHONY: install symlinks setup
