@@ -4,5 +4,5 @@
 
 # install require dependencies
 brew install python3 python3-pip pyvim
-brew install --cask kitty
+brew install --cask alacritty
 brew install --cask docker
