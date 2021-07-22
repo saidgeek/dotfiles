@@ -4,5 +4,6 @@
 
 # install require dependencies
 brew install python3 python3-pip pyvim
+brew install ripgrep
 brew install --cask alacritty
 brew install --cask docker

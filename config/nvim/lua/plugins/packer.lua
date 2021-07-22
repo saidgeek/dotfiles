@@ -33,16 +33,7 @@ return require('packer').startup(function()
     }
   }
   ]]
-  use {
-    "ahmedkhalf/lsp-rooter.nvim",
-    config = function()
-      require("lsp-rooter").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  use "ahmedkhalf/lsp-rooter.nvim"
   use {
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim"
@@ -56,6 +47,10 @@ return require('packer').startup(function()
     requires = {
       'nvim-lua/plenary.nvim'
     }
+  }
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
   }
   -- Editor utilities
   use "lukas-reineke/indent-blankline.nvim"
