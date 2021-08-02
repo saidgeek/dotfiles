@@ -24,3 +24,10 @@ setopt FLOW_CONTROL
 setopt MENU_COMPLETE
 
 zstyle ':completion:*:*:*:*:*' menu select
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm 
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+source $HOME/zsh_alias
+
