@@ -1,14 +1,13 @@
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-completions
-zplug zsh-users/zsh-syntax-highlighting
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-# this config is verbose temporaly, because is development
-# TODO: remove `--verbose` then is stable
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
 zplug load
 
 autoload -U compinit && compinit
@@ -25,9 +24,13 @@ setopt MENU_COMPLETE
 
 zstyle ':completion:*:*:*:*:*' menu select
 
+source $HOME/zsh_alias
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm 
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-source $HOME/zsh_alias
+source $HOME/.cargo/env
+export FZF_BASE=/usr/local/opt/fzf/install
+export FZF_DEFAULT_COMMAND='fd'
 
