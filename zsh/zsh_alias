@@ -12,7 +12,7 @@ alias gca="git commit --amend"
 alias gr="git rebase"
 alias gri="git rebase -i"
 
-alias l="exa -1 -G --icons -a -s=type --colour=always -H -I '.git|node_modules'"
+alias l="exa -G --icons -a -s=type --colour=always -H -I '.git|node_modules'"
 alias lt="l -T -L 1"
 alias lt2="l -T -L 2"
 alias lt3="l -T -L 3"
