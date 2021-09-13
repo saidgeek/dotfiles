@@ -24,6 +24,7 @@ setopt MENU_COMPLETE
 
 zstyle ':completion:*:*:*:*:*' menu select
 
+export EDITOR='nvim'
 source $HOME/zsh_alias
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
