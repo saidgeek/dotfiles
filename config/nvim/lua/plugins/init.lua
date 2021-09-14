@@ -3,7 +3,7 @@ require('plugins.packer')
 
 require('plugins.nvim-tree')
 require('plugins.lualine')
-require('plugins.bufferline')
+-- require('plugins.bufferline')
 require('plugins.startify')
 require('plugins.indent-blankline')
 require('plugins.autopairs')

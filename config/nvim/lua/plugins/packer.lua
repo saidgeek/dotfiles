@@ -23,7 +23,7 @@ return require('packer').startup(function()
     'hoob3rt/lualine.nvim',
     reauires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
+  -- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   --[[ use {
     'glepnir/galaxyline.nvim',
     branch = 'main',

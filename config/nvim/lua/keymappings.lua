@@ -20,7 +20,7 @@ map('n', '<leader>ff', ':Telescope find_files<cr>', { silent = true })
 map('n', '<leader>fg', ':Telescope live_grep<cr>', { silent = true })
 map('n', '<leader>fb', ':Telescope buffers<cr>', { silent = true })
 map('n', '<leader>fh', ':Telescope help_tags<cr>', { silent = true })
-map('n', '<leader>fb', ':Telescope file_browser<cr>', { silent = true })
+map('n', '<leader>fe', ':Telescope file_browser<cr>', { silent = true })
 map('n', '<leader>ft', ':TodoTelescope<cr>', { silent = true })
 
 
