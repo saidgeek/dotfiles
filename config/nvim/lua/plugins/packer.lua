@@ -52,6 +52,8 @@ return require('packer').startup(function()
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   }
+  use "preservim/vimux"
+
   -- Editor utilities
   use "lukas-reineke/indent-blankline.nvim"
   use 'windwp/nvim-autopairs'
@@ -78,4 +80,7 @@ return require('packer').startup(function()
   use 'glepnir/lspsaga.nvim'
   -- langs
   use 'folke/lua-dev.nvim'
+
+  -- dev utils
+  use "tyewang/vimux-jest-test"
 end)
