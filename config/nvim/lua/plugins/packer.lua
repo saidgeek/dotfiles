@@ -83,4 +83,7 @@ return require('packer').startup(function()
 
   -- dev utils
   use "tyewang/vimux-jest-test"
+
+  -- general
+  use 'airblade/vim-rooter'
 end)

@@ -31,3 +31,11 @@ map("n", "<leader>xl", "<cmd>Trouble loclist<cr>", {silent = true})
 map("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", {silent = true})
 map("n", "gR", "<cmd>Trouble lsp_references<cr>", {silent = true})
 
+-- fast scroling
+map("n", "<C-j>", "10<C-e>")
+map("n", "<C-k>", "10<C-y>")
+
+-- vimux
+map("n", "<leader>rr", ":call VimuxPromptCommand()<cr>")
+map("n", "<leader>RR", ":call VimuxRunLastCommand()<cr>", {silent = true})
+map("n", "<leader>rq", ":call VimuxCloseRunner()<cr>", {silent = true})
