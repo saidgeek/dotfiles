@@ -35,3 +35,4 @@ source $HOME/.cargo/env
 export FZF_BASE=/usr/local/opt/fzf/install
 export FZF_DEFAULT_COMMAND='fd'
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
