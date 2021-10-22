@@ -32,3 +32,4 @@ if not functions -q fundle;
 else
   source ~/.config/fish/plugins.fish
 end
+
