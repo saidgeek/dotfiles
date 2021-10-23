@@ -1,3 +1,6 @@
+# config fundle
+source (dirname (status --current-filename))/plugins.fish
+
 set fish_greeting ""
 
 set -gx TERM xterm-256color
@@ -26,10 +29,15 @@ if type -q exa
   alias l "ll --no-filesize --no-permissions --no-user --no-time"
 end
 
-if not functions -q fundle; 
-  eval (curl -sfL https://git.io/fundle-install);
-  command "fundle install"
-else
-  source ~/.config/fish/plugins.fish
+# nvm config
+set -gx NVM_DIR ~/.nvm
+set -gx nvm_prefix $NVM_DIR
+
+function __check_nvm --on-variable PWD --description "check nvm use"
+  status --is-command-substitution; and return
+
+  if test -f .nvmrc; and test -r .nvmrc;
+    nvm use
+  end
 end
 
