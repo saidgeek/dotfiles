@@ -1,16 +1,12 @@
 local map = require('utils').map
 
-vim.g.mapleader = ' '
+vim.g.mapleader = ';'
 
--- NvimTree
-
-map('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
-map('n', '<leader>E', ':NvimTreeFind<CR>', { silent = true })
-
--- Bufferline
-map('n', 'Q', ':bdelete<CR>', { silent = true })
-map('n', 'H', ':BufferLineCycleNext<CR>', { silent = true })
-map('n', 'L', ':BufferLineCyclePrev<CR>', { silent = true })
+-- moving selected lines
+map('v', '<Tab>', '>gv')
+map('v', '<S-Tab>', '<gv')
+map('v', '<S-k>', ":m '<-2<CR>gv=gv", { silent = true })
+map('v', '<S-j>', ":m '>+1<CR>gv=gv", { silent = true })
 
 -- Neogit
 map('n', '<leader>gs', ':Neogit<CR>', { silent = true })
@@ -20,7 +16,6 @@ map('n', '<leader>ff', ':Telescope find_files<cr>', { silent = true })
 map('n', '<leader>fg', ':Telescope live_grep<cr>', { silent = true })
 map('n', '<leader>fb', ':Telescope buffers<cr>', { silent = true })
 map('n', '<leader>fh', ':Telescope help_tags<cr>', { silent = true })
-map('n', '<leader>fe', ':Telescope file_browser<cr>', { silent = true })
 map('n', '<leader>ft', ':TodoTelescope<cr>', { silent = true })
 
 -- Trouble
@@ -39,3 +34,7 @@ map("n", "<C-k>", "10<C-y>")
 map("n", "<leader>rr", ":call VimuxPromptCommand()<cr>")
 map("n", "<leader>RR", ":call VimuxRunLastCommand()<cr>", {silent = true})
 map("n", "<leader>rq", ":call VimuxCloseRunner()<cr>", {silent = true})
+
+-- neofs
+map("n", "<leader>e", '<cmd>lua require\'neofs\'.open()<cr>', {silent = true})
+
