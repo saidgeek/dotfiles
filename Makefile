@@ -17,5 +17,8 @@ symlinks:
 	#	ln -sf `pwd`/zsh/zsh_alias ~/zsh_alias
 	#	ln -sf `pwd`/zshrc ~/.zshrc
 	ln -sf `pwd`/config/fish ~/.config
+	ln -sf `pwd`/config/yabai ~/.config
+	ln -sf `pwd`/config/skhd ~/.config
+	ln -sf `pwd`/config/spacebar ~/.config
 
 .PHONY: install symlinks setup
