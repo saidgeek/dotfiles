@@ -46,8 +46,8 @@ cmd + shift + alt - l : yabai -m window --resize right:-20:0
 cmd - e : yabai -m window --toggle split
 
 # window zoom
-cmd - d : yabai -m window --toggle zoom-parent
-cmd - f : yabai -m window --toggle zoom-fullscreen
+cmd + shift - z : yabai -m window --toggle zoom-parent
+cmd - z : yabai -m window --toggle zoom-fullscreen
 cmd + shift - f : yabai -m window --toggle native-fullscreen
 
 # rotate tree

@@ -1,6 +1,6 @@
 local map = require('utils').map
 
-vim.g.mapleader = ';'
+vim.g.mapleader = ' '
 
 -- moving selected lines
 map('v', '<Tab>', '>gv')

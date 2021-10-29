@@ -46,7 +46,7 @@ vim.cmd('colorscheme ayu')
 g.ayu_mirage = true
 -- ]]
 
-local ok, _ = pcall(function() require(lsp_config) end)
+local ok, _ = pcall(function() require('lsp_config') end)
 
 if not ok then
   print('LSP not init.')
