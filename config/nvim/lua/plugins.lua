@@ -28,12 +28,6 @@ return require('packer').startup(
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
     use {
-      'lewis6991/gitsigns.nvim',
-      requires = {
-        'nvim-lua/plenary.nvim'
-      }
-    }
-    use {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
     }

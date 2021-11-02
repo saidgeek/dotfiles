@@ -41,19 +41,13 @@ set.inccommand = 'nosplit'
 -- [[ theme
 set.guifont = 'Victor Mono 10'
 set.termguicolors = true
-set.background = 'dark'
-vim.cmd('colorscheme ayu')
-g.ayu_mirage = true
+-- set.background = 'dark'
+vim.cmd(':colorscheme ayu-mirage')
 -- ]]
-
-local ok, _ = pcall(function() require('lsp_config') end)
-
-if not ok then
-  print('LSP not init.')
-end
 
 require('plugins')
 
+-- require('saidgeek.ayu')
 require('saidgeek.neofs')
 require('saidgeek.lualine')
 require('saidgeek.indent-blankline')
@@ -64,7 +58,9 @@ require('saidgeek.nvim-compe')
 require('saidgeek.neogit')
 require('saidgeek.todo-comments')
 require('saidgeek.telescope')
-require('saidgeek.gitsigns')
+-- require('saidgeek.gitsigns')
 require('saidgeek.vimux')
 require('saidgeek.vim-rooter')
 require('maps')
+require('lsp_config')
+
