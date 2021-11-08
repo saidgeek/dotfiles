@@ -1,40 +1,43 @@
+# reload skhd and yabai services
+cmd + ctrl + alt - r : "$(brew services restart skhd)"
+cmd + ctrl + alt + shift - r : "$(brew services restart yabai)"
 # open Iterm terminal
 cmd - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
 
 # focus window
-cmd - u : yabai -m window --focus recent
-cmd - h : yabai -m window --focus west
-cmd - j : yabai -m window --focus south
-cmd - k : yabai -m window --focus north
-cmd - l : yabai -m window --focus east
-cmd - n : yabai -m window --focus stack.prev
-cmd - m : yabai -m window --focus stack.next
-
-# swap window
-cmd + alt - u : yabai -m window --swap recent
-cmd + alt - h : yabai -m window --swap west
-cmd + alt - j : yabai -m window --swap south
-cmd + alt - k : yabai -m window --swap north
-cmd + alt - l : yabai -m window --swap east
+ctrl - e : yabai -m window --focus recent
+ctrl - h : yabai -m window --focus west
+ctrl - j : yabai -m window --focus south
+ctrl - k : yabai -m window --focus north
+ctrl - l : yabai -m window --focus east
+ctrl - n : yabai -m window --focus stack.prev
+ctrl - m : yabai -m window --focus stack.next
 
 # move window
-cmd + alt + ctrl - h : yabai -m window --warp west
-cmd + alt + ctrl - j : yabai -m window --warp south
-cmd + alt + ctrl - k : yabai -m window --warp north
-cmd + alt + ctrl - l : yabai -m window --warp east
+ctrl - a : yabai -m window --warp west
+ctrl - s : yabai -m window --warp south
+ctrl - w : yabai -m window --warp north
+ctrl - d : yabai -m window --warp east
+
+# swap window
+ctrl + alt - e : yabai -m window --swap recent
+ctrl + alt - a : yabai -m window --swap west
+ctrl + alt - s : yabai -m window --swap south
+ctrl + alt - k : yabai -m window --swap north
+ctrl + alt - d : yabai -m window --swap east
 
 # set insertion point in focused cointainer
-cmd + ctrl - u : yabai -m window --insert stack
-cmd + ctrl - h : yabai -m window --insert west
-cmd + ctrl - j : yabai -m window --insert south
-cmd + ctrl - k : yabai -m window --insert north
-cmd + ctrl - l : yabai -m window --insert east
+ctrl + shift - q : yabai -m window --insert stack
+ctrl + shift - a : yabai -m window --insert west
+ctrl + shift - s : yabai -m window --insert south
+ctrl + shift - w : yabai -m window --insert north
+ctrl + shift - d : yabai -m window --insert east
 
 # increase window size
-cmd + shift - h : yabai -m window --resize left:-20:0
-cmd + shift - j : yabai -m window --resize bottom:0:20
-cmd + shift - k : yabai -m window --resize top:0:-20
-cmd + shift - l : yabai -m window --resize right:20:0
+ctrl + shift - h : yabai -m window --resize left:-20:0
+ctrl + shift - j : yabai -m window --resize bottom:0:20
+ctrl + shift - k : yabai -m window --resize top:0:-20
+ctrl + shift - l : yabai -m window --resize right:20:0
 
 # decrease window size
 cmd + shift + alt - h : yabai -m window --resize left:20:0
@@ -43,12 +46,15 @@ cmd + shift + alt - k : yabai -m window --resize top:0:20
 cmd + shift + alt - l : yabai -m window --resize right:-20:0
 
 # toggle window split type
-cmd - e : yabai -m window --toggle split
+ctrl + shift - e : yabai -m window --toggle split
 
 # window zoom
-cmd + shift - z : yabai -m window --toggle zoom-parent
-cmd - z : yabai -m window --toggle zoom-fullscreen
-cmd + shift - f : yabai -m window --toggle native-fullscreen
+ctrl + alt - z : yabai -m window --toggle zoom-fullscreen
+ctrl + shift - z : yabai -m window --toggle zoom-parent
+ctrl + shift - f : yabai -m window --toggle native-fullscreen
+
+# balance size of window
+ctrl - q : yabai -m space --balance
 
 # rotate tree
 alt - r : yabai -m space --rotate 90
@@ -59,17 +65,13 @@ alt - y : yabai -m space --mirror y-axis
 # mirror tree x-axis
 alt - x : yabai -m space --mirror x-axis
 
-
-# balance size of window
-cmd - 0 : yabai -m space --balance
-
 # create new space and follow focus
 alt - n : yabai -m space --create && \
           index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
           yabai -m space --focus "${index}"
 
 # create new space, move current window and follow focus
-alt + cmd - n : yabai -m space --create && \
+alt + shift - n : yabai -m space --create && \
           index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
           yabai -m window --space "${index}" && \
           yabai -m space --focus "${index}"
@@ -93,29 +95,29 @@ alt - 9 : yabai -m space --focus 9
 alt - 0 : yabai -m space --focus 10
 
 # send window to space and follow focus
-alt + cmd - u : yabai -m window --space recent && yabai -m space --focus recent
-alt + cmd - h : yabai -m window --space prev && yabai -m space --focus prev
-alt + cmd - l : yabai -m window --space next && yabai -m space --focus next
-alt + cmd - 1 : yabai -m window --space 1 && yabai -m space --focus 1
-alt + cmd - 2 : yabai -m window --space 2 && yabai -m space --focus 2
-alt + cmd - 3 : yabai -m window --space 3 && yabai -m space --focus 3
-alt + cmd - 4 : yabai -m window --space 4 && yabai -m space --focus 4
-alt + cmd - 5 : yabai -m window --space 5 && yabai -m space --focus 5
-alt + cmd - 6 : yabai -m window --space 6 && yabai -m space --focus 6
-alt + cmd - 7 : yabai -m window --space 7 && yabai -m space --focus 7
-alt + cmd - 8 : yabai -m window --space 8 && yabai -m space --focus 8
-alt + cmd - 9 : yabai -m window --space 9 && yabai -m space --focus 9
-alt + cmd - 0 : yabai -m window --space 0 && yabai -m space --focus 10
+alt + ctrl - u : yabai -m window --space recent && yabai -m space --focus recent
+alt + ctrl - h : yabai -m window --space prev && yabai -m space --focus prev
+alt + ctrl - l : yabai -m window --space next && yabai -m space --focus next
+alt + ctrl - 1 : yabai -m window --space 1 && yabai -m space --focus 1
+alt + ctrl - 2 : yabai -m window --space 2 && yabai -m space --focus 2
+alt + ctrl - 3 : yabai -m window --space 3 && yabai -m space --focus 3
+alt + ctrl - 4 : yabai -m window --space 4 && yabai -m space --focus 4
+alt + ctrl - 5 : yabai -m window --space 5 && yabai -m space --focus 5
+alt + ctrl - 6 : yabai -m window --space 6 && yabai -m space --focus 6
+alt + ctrl - 7 : yabai -m window --space 7 && yabai -m space --focus 7
+alt + ctrl - 8 : yabai -m window --space 8 && yabai -m space --focus 8
+alt + ctrl - 9 : yabai -m window --space 9 && yabai -m space --focus 9
+alt + ctrl - 0 : yabai -m window --space 0 && yabai -m space --focus 10
 
 # change layout
 alt + shift - s : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
 
 # focus monitor
-ctrl + alt - u : yabai -m display --focus recent
-ctrl + alt - h : yabai -m display --focus prev
-ctrl + alt - l : yabai -m display --focus next
-ctrl + alt - 1 : yabai -m display --focus 1
-ctrl + alt - 2 : yabai -m display --focus 2
+cmd + alt - e : yabai -m display --focus recent
+cmd + alt - h : yabai -m display --focus prev
+cmd + alt - l : yabai -m display --focus next
+cmd + alt - 1 : yabai -m display --focus 1
+cmd + alt - 2 : yabai -m display --focus 2
 
 # send window to display and follow focus
 ctrl + shift + cmd - u : yabai -m window --display recent && yabai -m display --focus recent
