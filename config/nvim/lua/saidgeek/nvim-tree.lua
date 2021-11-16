@@ -1,48 +1,49 @@
-local set = require('utils').setPlug('nvim_tree_')
-
-set('side', 'left')
-set('width', 40)
-set('ignore', {'.git'})
-set('gitignore', 1)
-set('auto_open', 1)
-set('auto_close', 1)
-set('quit_on_open', 1)
-set('update_cwd', 0)
-set('group_empty', 1)
-set('lsp_diagnostics', 1)
-set('highlight_opened_files', 1)
-set('follow', 0)
-set('auto_ignore_ft', {'dashboard'})
-set('icon_padding', ' ')
-set('show_icons', {
-  git = 1,
-  folders = 1,
-  files = 1,
-  folder_arrows = 1,
-})
-
-set('icons', {
-  default = "﬒",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "ﮒ",
-    unmerged = "",
-    renamed = "",
-    untracked = ""
+require('nvim-tree').setup {
+  side =  'left',
+  width = 40,
+  ignore = {".git"}, 
+  gitignore =  1,
+  auto_open = 1,
+  auto_close = 1,
+  quit_on_open = 1,
+  update_cwd = 0,
+  group_empty = 1,
+  lsp_diagnostics = 1.
+  highlight_opened_files = 1,
+  follow = 0,
+  auto_ignore_ft = {"dashboard"},
+  icon_padding = " ",
+  show_icons: {
+    git = 1,
+    folders = 1,
+    files = 1,
+    folder_arrows = 1,
   },
-  folder = {
-    arrow_open = "",
-    arrow_closed = "",
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-  },
-  lsp = {
-    hint = "",
-    info = "",
-    warning = "",
-    error = "",
+  icons = {
+    default = "﬒",
+    symlink = "",
+    git = {
+      unstaged = "",
+      staged = "ﮒ",
+      unmerged = "",
+      renamed = "",
+      untracked = ""
+    },
+    folder = {
+      arrow_open = "",
+      arrow_closed = "",
+      default = "",
+      open = "",
+      empty = "",
+      empty_open = "",
+    },
+    lsp = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    }
   }
-})
+}
+
+

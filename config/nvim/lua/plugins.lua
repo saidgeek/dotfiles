@@ -49,8 +49,11 @@ return require('packer').startup(
     use { 'nvim-lua/popup.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- navigation
-    use { 'TimUntersberger/neofs', requires = 'kyazdani42/nvim-web-devicons' }
-
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons',
+      commit = "fd7f60e242205ea9efc9649101c81a07d5f458bb",
+    }
 
     -- Theme 
     use 'Shatur/neovim-ayu'

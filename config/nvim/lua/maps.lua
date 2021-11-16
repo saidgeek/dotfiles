@@ -35,6 +35,6 @@ map("n", "<leader>rr", ":call VimuxPromptCommand()<cr>")
 map("n", "<leader>RR", ":call VimuxRunLastCommand()<cr>", {silent = true})
 map("n", "<leader>rq", ":call VimuxCloseRunner()<cr>", {silent = true})
 
--- neofs
-map("n", "<leader>e", '<cmd>lua require\'neofs\'.open()<cr>', {silent = true})
+-- nvim-tree
+map("n", "<leader>e", ':NvimTreeToggle<cr>', {silent = true})
 
