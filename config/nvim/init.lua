@@ -46,7 +46,6 @@ vim.cmd(':colorscheme ayu-mirage')
 -- ]]
 
 require('plugins')
-
 -- require('saidgeek.ayu')
 require('saidgeek.neofs')
 require('saidgeek.lualine')
@@ -63,4 +62,3 @@ require('saidgeek.vimux')
 require('saidgeek.vim-rooter')
 require('maps')
 require('lsp_config')
-

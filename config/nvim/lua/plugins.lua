@@ -41,7 +41,11 @@ return require('packer').startup(
       run = ':TSUpdate'
     }
     use 'hrsh7th/nvim-compe'
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+    use { 
+      'TimUntersberger/neogit',
+      requires = 'nvim-lua/plenary.nvim',
+      commit = "53772efc42263989d18d4a86c350b8b0e1f1b71b",
+    }
     use { 'nvim-lua/popup.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- navigation
