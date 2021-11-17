@@ -66,12 +66,12 @@ alt - y : yabai -m space --mirror y-axis
 alt - x : yabai -m space --mirror x-axis
 
 # create new space and follow focus
-alt - n : yabai -m space --create && \
+alt - a : yabai -m space --create && \
           index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
           yabai -m space --focus "${index}"
 
 # create new space, move current window and follow focus
-alt + shift - n : yabai -m space --create && \
+alt + shift - a : yabai -m space --create && \
           index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
           yabai -m window --space "${index}" && \
           yabai -m space --focus "${index}"
