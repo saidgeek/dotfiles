@@ -14,6 +14,10 @@ require('nvim-treesitter.configs').setup {
     'css',
     'json',
     'yaml'
+  },
+  context_commetstring = {
+    enable = true,
+    enable_autocmd = false,
   }
 }
 

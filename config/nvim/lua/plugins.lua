@@ -47,6 +47,8 @@ return require('packer').startup(
       commit = "53772efc42263989d18d4a86c350b8b0e1f1b71b",
     }
     use { 'nvim-lua/popup.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use 'b3nj5m1n/kommentary'
 
     -- navigation
     use {
