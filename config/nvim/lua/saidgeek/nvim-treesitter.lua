@@ -13,6 +13,7 @@ require('nvim-treesitter.configs').setup {
     'html',
     'css',
     'json',
+    'rust',
     'yaml'
   },
   context_commetstring = {

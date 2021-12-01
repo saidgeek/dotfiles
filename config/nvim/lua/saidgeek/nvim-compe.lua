@@ -25,12 +25,12 @@ require'compe'.setup {
   };
 
   source = {
+    nvim_lsp = true;
+    vsnip = false;
     path = true;
     buffer = true;
     calc = false;
-    nvim_lsp = true;
     nvim_lua = true;
-    vsnip = false;
     ultisnips = false;
     luasnip = false;
   };

@@ -67,6 +67,7 @@ return require('packer').startup(
 
     -- langs
     use 'folke/lua-dev.nvim'
+    use 'simrat39/rust-tools.nvim'
 
     -- dev utils
     use "tyewang/vimux-jest-test"
