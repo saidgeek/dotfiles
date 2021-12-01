@@ -42,7 +42,7 @@ set.inccommand = 'nosplit'
 set.guifont = 'Victor Mono 10'
 set.termguicolors = true
 -- set.background = 'dark'
-vim.cmd(':colorscheme ayu-mirage')
+vim.cmd(':colorscheme dracula')
 -- ]]
 
 require('plugins')

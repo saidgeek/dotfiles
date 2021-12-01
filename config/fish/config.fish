@@ -23,6 +23,7 @@ set -gx EDITOR nvim
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
+set -gx PATH $HOME/.cargo/bin $PATH
 
 if type -q exa
   alias ll "exa -a --group-directories-first -l --icons --color=always --git"
@@ -40,4 +41,3 @@ function __check_nvm --on-variable PWD --description "check nvm use"
     nvm use
   end
 end
-

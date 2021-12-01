@@ -57,7 +57,8 @@ return require('packer').startup(
     }
 
     -- Theme 
-    use 'Shatur/neovim-ayu'
+    -- use 'Shatur/neovim-ayu'
+    use {'dracula/vim', as = 'dracula'}
     use 'kyazdani42/nvim-web-devicons'
     
     -- LSP
