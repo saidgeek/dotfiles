@@ -24,6 +24,7 @@ set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
 set -gx PATH $HOME/.cargo/bin $PATH
+set -gx JQ_LIB_DIR /usr/local/lib
 
 if type -q exa
   alias ll "exa -a --group-directories-first -l --icons --color=always --git"
@@ -41,3 +42,7 @@ function __check_nvm --on-variable PWD --description "check nvm use"
     nvm use
   end
 end
+
+# source (pyenv init --path | psub)
+# source (pyenv virtualenv-init - | psub)
+

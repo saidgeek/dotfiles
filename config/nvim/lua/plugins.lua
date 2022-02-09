@@ -63,7 +63,7 @@ return require('packer').startup(
     
     -- LSP
     use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
+    use 'tami5/lspsaga.nvim'
 
     -- langs
     use 'folke/lua-dev.nvim'
