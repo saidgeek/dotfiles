@@ -1,5 +1,10 @@
 require('telescope').setup{
   defaults = {
+    mappings = {
+      n = {
+        ["dd"] = require('telescope.actions').delete_buffer,
+      },
+    },
   },
   pickers = {
     find_files = {
