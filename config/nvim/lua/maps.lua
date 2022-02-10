@@ -2,6 +2,11 @@ local map = require('utils').map
 
 vim.g.mapleader = ' '
 
+
+map('n', '<leader>ww', ':w<CR>', { silent = true })
+map('n', '<leader>qq', ':q<CR>', { silent = true })
+map('n', '<leader>q<Tab>', ':q!<CR>', { silent = true })
+
 -- moving selected lines
 map('v', '<Tab>', '>gv')
 map('v', '<S-Tab>', '<gv')
