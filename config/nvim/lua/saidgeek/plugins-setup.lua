@@ -32,9 +32,19 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
+  use("nvim-lua/plenary.nvim")
 
   -- colorschema
   use ({ 'projekt0n/github-nvim-theme' })
+
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
+
+  -- icons
+  use("kyazdani42/nvim-web-devicons")
+
+  -- statusline
+	use("nvim-lualine/lualine.nvim")
 
   if packer_bootstrap then
     require("packer").sync()
