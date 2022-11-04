@@ -1,3 +1,6 @@
 require("saidgeek.core.options")
+require("saidgeek.core.keymaps")
 require("saidgeek.plugins-setup")
 require("saidgeek.core.colorscheme")
+require("saidgeek.plugins.nvim-tree")
+require("saidgeek.plugins.lualine")
