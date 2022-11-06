@@ -37,3 +37,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
+
+-- disable swap files
+
+opt.swapfile = false
