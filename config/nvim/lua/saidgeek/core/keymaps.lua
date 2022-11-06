@@ -37,3 +37,6 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>")
 
 -- neogit
 keymap.set("n", "<leader>gg", "<cmd>:Neogit<CR>")
+
+-- reset lsp server
+keymap.set("n", "<leader>rs", ":LspRestart<CR>")
