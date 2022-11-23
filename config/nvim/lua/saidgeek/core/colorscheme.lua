@@ -1,9 +1,9 @@
 local status, github_theme = pcall(require, "github-theme")
 if not status then
-  print("Colorscheme not found!")
-  return
+	print("Colorscheme not found!")
+	return
 end
 
 github_theme.setup({
-  theme_style = "dark_colorblind",
+	theme_style = "dimmed",
 })
