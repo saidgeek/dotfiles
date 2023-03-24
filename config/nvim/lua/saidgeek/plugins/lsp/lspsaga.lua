@@ -3,7 +3,7 @@ if not status then
   return
 end
 
-lspsaga.init_lsp_saga({
+lspsaga.setup({
   move_in_saga = { prev = "<C-p>", next = "<C-n>" },
   finder_action_keys = {
     open = "<CR>",

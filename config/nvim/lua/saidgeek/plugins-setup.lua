@@ -42,6 +42,7 @@ return packer.startup(function(use)
 
 	-- colorschema
 	use({ "projekt0n/github-nvim-theme" })
+	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- file explorer
 	use("nvim-tree/nvim-tree.lua")
@@ -55,11 +56,16 @@ return packer.startup(function(use)
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-
+	use({
+		"nvim-telescope/telescope-file-browser.nvim",
+		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	})
 	-- autocompletion
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
+	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
+	use("hrsh7th/cmp-nvim-lua") -- for autocompletion
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
@@ -72,7 +78,6 @@ return packer.startup(function(use)
 
 	-- configuring lsp servers
 	use("neovim/nvim-lspconfig") -- easily configure language servers
-	use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 	use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
@@ -95,6 +100,16 @@ return packer.startup(function(use)
 
 	-- git integration
 	use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+	use({
+		"windwp/nvim-spectre",
+		requires = "nvim-lua/plenary.nvim",
+	})
+
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
