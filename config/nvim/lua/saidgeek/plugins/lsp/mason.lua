@@ -22,7 +22,7 @@ mason_lspconfig.setup({
 		"html",
 		"cssls",
 		"tailwindcss",
-		"sumneko_lua",
+		"lua_ls",
 		"astro",
 		"emmet_ls",
 		"jsonls",
