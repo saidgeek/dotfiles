@@ -7,7 +7,7 @@ local nvim_version = nvim_info.major .. "." .. nvim_info.minor .. "." .. nvim_in
 function utils.expect_nvim_version(version)
 	local expect_version = version
 	if not (type(expect_version) == "string") then
-		expect_version = "0.8.0"
+		expect_version = "0.8.3"
 	end
 
 	print(expect_version)
