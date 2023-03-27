@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 local keymap = vim.keymap
 
 -- use kjkj to exit insert mode
