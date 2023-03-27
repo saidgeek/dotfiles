@@ -1,6 +1,11 @@
-local status, neogit = pcall(require, "neogit")
-if not status then
-	return
-end
-
-neogit.setup()
+return {
+	"TimUntersberger/neogit",
+	dependencies = {
+		{ "nvim-lua/plenary.nvim" },
+	},
+	keys = {
+		{ "<leader>gg", "<cmd>:Neogit<CR>" },
+	},
+	cmd = "Neogit",
+	config = true,
+}
