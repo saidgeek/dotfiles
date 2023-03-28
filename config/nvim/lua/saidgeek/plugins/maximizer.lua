@@ -1,5 +1,5 @@
 return {
-	"christoomey/vim-tmux-navigator",
+	"szw/vim-maximizer",
 	keys = {
 		{ "<leader>m", ":MaximizerToggle", { "n" } },
 		{ "<leader>m", ":MaximizerToggle", { "v" } },
