@@ -1,9 +1,9 @@
 return {
 	"szw/vim-maximizer",
 	keys = {
-		{ "<leader>m", ":MaximizerToggle", { "n" } },
-		{ "<leader>m", ":MaximizerToggle", { "v" } },
-		{ "<C-m>", ":MaximizerToggle", { "i" } },
+		{ "<leader>m", ":MaximizerToggle<CR>", { "n" } },
+		{ "<leader>m", ":MaximizerToggle<CR>", { "v" } },
+		{ "<C-m>", ":MaximizerToggle<CR>", { "i" } },
 	},
 	cmd = "MaximizerToggle",
 }
