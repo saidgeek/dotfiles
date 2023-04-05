@@ -4,7 +4,7 @@ return {
 		{
 			"<leader>l",
 			function()
-				require("lsp_lines").toggle
+				require("lsp_lines").toggle()
 			end,
 			mode = "n",
 			desc = "Toggle lsp lines",
