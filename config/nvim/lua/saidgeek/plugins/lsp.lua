@@ -24,20 +24,24 @@ local setup_servers = function(lspconfig, on_attach, capabilities)
 	})
 
 	lspconfig["lua_ls"].setup({
-		capabilities = capabilities,
+		-- capabilities = capabilities,
 		on_attach = on_attach,
-		settings = { -- custom settings for lua
+		settings = {
 			Lua = {
-				-- make the language server recognize "vim" global
+				runtime = {
+					version = "LuaJIT",
+				},
 				diagnostics = {
 					globals = { "vim" },
 				},
 				workspace = {
-					-- make language server aware of runtime files
-					library = {
-						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-						[vim.fn.stdpath("config") .. "/lua"] = true,
-					},
+					library = vim.api.nvim_get_runtime_file("", true),
+				},
+				telemerty = {
+					enable = false,
+				},
+				hint = {
+					enable = true,
 				},
 			},
 		},
@@ -104,7 +108,7 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		vim.diagnostic.config({ virtual_text = false })
+		vim.diagnostic.config({ virtual_text = true })
 
 		setup_servers(lspconfig, on_attach, capabilities)
 	end,
