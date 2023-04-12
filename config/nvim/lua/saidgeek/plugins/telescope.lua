@@ -6,6 +6,7 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 		},
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	cmd = "Telescope",
 	keys = {
@@ -66,8 +67,12 @@ return {
 					initial_mode = "normal",
 					theme = "ivy",
 				},
+				["ui-select"] = {
+					theme = "ivy",
+				},
 			},
 		})
 		require("telescope").load_extension("file_browser")
+		require("telescope").load_extension("ui-select")
 	end,
 }
