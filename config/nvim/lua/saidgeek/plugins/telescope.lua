@@ -20,6 +20,7 @@ return {
 		{ "<leader>gfc", ":Telescope git_bcommits<cr>" },
 		{ "<leader>gb", ":Telescope git_branches<cr>" },
 		{ "<leader>gs", ":Telescope git_status<cr>" },
+		{ "<leader><leader>k", ":Telescope keymaps<cr>" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -59,6 +60,9 @@ return {
 					theme = "ivy",
 				},
 				git_status = {
+					theme = "ivy",
+				},
+				keymaps = {
 					theme = "ivy",
 				},
 			},
