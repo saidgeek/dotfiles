@@ -3,9 +3,11 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	event = "VeryLazy",
-	config = true,
+	config = function()
+		require("todo-comments").setup({})
+	end,
+	cmd = "TodoTelescope",
 	keys = {
-		{ "<loader>t", ":TodoTelescope<CR>", { noremap = true, silent = true } },
+		{ "<leader>t", ":TodoTelescope<cr>" },
 	},
 }

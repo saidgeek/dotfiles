@@ -6,6 +6,7 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
 		},
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	cmd = "Telescope",
 	keys = {
@@ -19,6 +20,7 @@ return {
 		{ "<leader>gfc", ":Telescope git_bcommits<cr>" },
 		{ "<leader>gb", ":Telescope git_branches<cr>" },
 		{ "<leader>gs", ":Telescope git_status<cr>" },
+		{ "<leader><leader>k", ":Telescope keymaps<cr>" },
 	},
 	config = function()
 		require("telescope").setup({
@@ -60,14 +62,21 @@ return {
 				git_status = {
 					theme = "ivy",
 				},
+				keymaps = {
+					theme = "ivy",
+				},
 			},
 			extensions = {
 				file_browser = {
 					initial_mode = "normal",
 					theme = "ivy",
 				},
+				["ui-select"] = {
+					theme = "ivy",
+				},
 			},
 		})
 		require("telescope").load_extension("file_browser")
+		require("telescope").load_extension("ui-select")
 	end,
 }
