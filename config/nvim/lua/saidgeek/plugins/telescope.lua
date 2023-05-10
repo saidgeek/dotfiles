@@ -15,7 +15,7 @@ return {
 		{ "<leader>fc", ":Telescope grep_string<cr>" },
 		{ "<leader>fb", ":Telescope buffers<cr>" },
 		{ "<leader>fh", ":Telescope help_tags<cr>" },
-		{ "<leader>e", ":Telescope file_browser<cr>" },
+		{ "<leader>fe", ":Telescope file_browser<cr>" },
 		{ "<leader>gc", ":Telescope git_commits<cr>" },
 		{ "<leader>gfc", ":Telescope git_bcommits<cr>" },
 		{ "<leader>gb", ":Telescope git_branches<cr>" },

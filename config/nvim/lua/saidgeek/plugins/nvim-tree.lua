@@ -1,15 +1,15 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	keys = {
-		{ "<leader>p", ":NvimTreeToggle<CR>" },
+		{ "<leader>e", ":NvimTreeToggle<CR>" },
 	},
 	cmd = "NvimTreeToggle",
 	config = function()
-		require("nvimtree").setup({
+		require("nvim-tree").setup({
 			disable_netrw = true,
 			view = {
 				adaptive_size = true,
-				width = 50,
+				width = 80,
 				side = "right",
 			},
 			renderer = {

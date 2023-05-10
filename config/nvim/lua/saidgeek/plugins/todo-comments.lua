@@ -6,7 +6,7 @@ return {
 	config = function()
 		require("todo-comments").setup({})
 	end,
-	cmd = "TodoTelescope",
+	event = "VeryLazy",
 	keys = {
 		{ "<leader>t", ":TodoTelescope<cr>" },
 	},
