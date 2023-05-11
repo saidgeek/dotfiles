@@ -130,8 +130,6 @@ return {
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
 
-		vim.diagnostic.config({ virtual_text = true })
-
 		setup_servers(lspconfig, on_attach, capabilities)
 
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -143,6 +141,7 @@ return {
 		})
 
 		vim.diagnostic.config({
+			virtual_text = true,
 			float = {
 				border = "single",
 			},
