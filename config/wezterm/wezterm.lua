@@ -6,8 +6,9 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
-config.font = wezterm.font("Victor Mono", { weight = "Bold" })
-config.font_size = 12.0
+
+config.font = wezterm.font("Victor Mono Nerd Font", { weight = "Bold" })
+config.font_size = 11.0
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.window_padding = {
@@ -16,10 +17,14 @@ config.window_padding = {
 	top = 0,
 	bottom = 0,
 }
+config.initial_cols = 110
+config.initial_rows = 30
 -- config.window_decorations = "NONE"
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
 
 config.color_scheme = "Catppuccin Macchiato"
--- config.default_prog = { "/usr/local/bin/tmux", "new-session", "-A", "-s", "Main" }
+-- config.default_prog = { "/usr/bin/tmux", "new-session", "-A", "-s", "Main" }
+
+config.warn_about_missing_glyphs = false
 
 return config
