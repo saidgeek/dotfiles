@@ -9,7 +9,7 @@ return {
 			disable_netrw = true,
 			view = {
 				adaptive_size = true,
-				width = 80,
+				width = 40,
 				side = "right",
 			},
 			renderer = {
