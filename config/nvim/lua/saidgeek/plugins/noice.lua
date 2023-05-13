@@ -5,5 +5,15 @@ return {
     "rcarriga/nvim-notify"
   },
   event = "VeryLazy",
-  config = true;
+  config = function()
+    require("noice").setup({
+      cmdline = {
+        enabled = true,
+        view = "cmdline_popup",
+        -- opts = {
+        --   position = "30%",
+        -- }
+      };
+    })
+  end;
 }

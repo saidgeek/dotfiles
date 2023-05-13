@@ -8,7 +8,7 @@ return {
 		},
 		"nvim-telescope/telescope-ui-select.nvim",
 	},
-	cmd = "Telescope",
+	event = "VeryLazy",
 	keys = {
 		{ "<leader>ff", ":Telescope find_files<cr>" },
 		{ "<leader>fs", ":Telescope live_grep<cr>" },
