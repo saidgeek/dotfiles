@@ -1,3 +1,6 @@
+(setq custom-file (expand-file-name "custom-val.el" user-emacs-directory))
+(load custom-file)
+
 ;; basics
 (setq inhibit-startup-message t)
 (setq visible-bell t)
@@ -18,7 +21,7 @@
 (electric-pair-mode 1)
 (hl-line-mode 1)
 
-(set-face-attribute 'default nil :font "VictorMono Nerd Font" :height 110)
+; (set-face-attribute 'default nil :font "VictorMono Nerd Font" :height 110)
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -36,10 +39,14 @@
   (setq use-package-always-ensure t
 	use-package-extend-minimally t))
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'catppuccin t)
-(setq catppuccin-flavor 'macchiato)
-(catppuccin-reload)
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; (load-theme 'catppuccin t)
+;; (setq catppuccin-flavor 'macchiato)
+;; (catppuccin-reload)
+
+(use-package doom-themes
+  :config
+  (load-theme 'doom-dracula))
 
 (use-package all-the-icons
   :if (display-graphic-p))
@@ -123,3 +130,5 @@
   :after ivy
   :init
   (ivy-rich-mode 1))
+
+(use-package magit)
