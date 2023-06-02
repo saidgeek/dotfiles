@@ -1,3 +1,5 @@
+(setq gc-cons-threshold (* 50 1000 1000))
+
 (setq custom-file (expand-file-name "custom-val.el" user-emacs-directory))
 (load custom-file)
 
@@ -26,8 +28,7 @@
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
+			 ("elpa" . "https://elpa.gnu.org/packages/")))(package-initialize)
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -35,21 +36,22 @@
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
-(eval-and-compile
-  (setq use-package-always-ensure t
-	use-package-extend-minimally t))
+(require 'use-package)
+(setq use-package-always-ensure t)
 
-;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-;; (load-theme 'catppuccin t)
-;; (setq catppuccin-flavor 'macchiato)
-;; (catppuccin-reload)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'catppuccin t)
+(setq catppuccin-flavor 'macchiato)
+(catppuccin-reload)
 
-(use-package doom-themes
-  :config
-  (load-theme 'doom-dracula))
+;; (use-package doom-themes
+;;   :config
+;;   (load-theme 'doom-dracula))
 
 (use-package all-the-icons
   :if (display-graphic-p))
+
+(use-package nerd-icons)
 
 (use-package doom-modeline
   :init (doom-modeline-mode 1)
@@ -132,3 +134,20 @@
   (ivy-rich-mode 1))
 
 (use-package magit)
+
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  (when (file-directory-p "~/develop")
+    (setq projectile-project-search-path '("~/develop/")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+(use-package counsel-projectile
+  :after projectile
+  :config (counsel-projectile-mode))
+
+(use-package org
+  :pin org)
