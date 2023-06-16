@@ -127,6 +127,10 @@
          ("C-k" . ivy-previous-line)
          ("C-d" . ivy-reverse-i-search-kill))
   :config
+  (setq ivy-format-function 'ivy-format-function-arrow)
+  (setq ivy-wrap t)
+  (setq ivy-fixed-height-minibuffer t)
+  (setq ivy-height 20)
   (ivy-mode 1))
 
 (use-package ivy-rich
@@ -153,35 +157,30 @@
 ;; develop
 ;;;; LSP
 
-(defun sgk/lsp-mode-setup ()
-  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
-  (lsp-headerline-breadcrumb-mode))
-
-(use-package lsp-mode
-  :hook (lsp-mode . sgk/lsp-mode-setup)
-  :init
-  (setq lsp-keymap-prefix "C-c l")
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  ;; :hook
+  ;; (typescript-mode . lsp-deferred)
   :config
-  (lsp-enable-which-key-integration t)
-  :commands (lsp lsp-deferred))
+  (setq typescript-indent-level 2))
 
-(use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
-  :custom
-  (setq lsp-ui-doc-position 'bottom)
-  (setq lsp-ui-sideline-enable t)
-  (setq lsp-ui-sideline-show-hover t))
+(use-package rust-mode
+  :ensure t)
 
+(use-package eglot
+  :ensure t
+  :config
+  ;; (add-to-list 'eglot-server-programs '(typescript-mode . ("typescript-language-server" "--stdio"))
+  ;; (add-to-list 'eglot-server-programs '(rust-mode . ("rust-analyzer"))
 
-(use-package lsp-ivy
-  :after lsp
-  :commands lsp-ivy-workspace-symbol)
+  (add-hook 'typescript-mode-hook 'eglot-ensure)
+  (add-hook 'rust-mode-hook 'eglot-ensure)
+  (add-hook 'prog-mode-hook 'eglot-ensure))
 
-(use-package lsp-treemacs
-  :commands lsp-treemacs-errors-list)
+(setq eglot-autoshutdown t)
+(setq eglot-stay-out-of '(company))
 
 (use-package company
-  :after lsp-mode
   :hook (prog-mode . company-mode)
   :bind
   (:map company-active-map
@@ -189,23 +188,62 @@
 	(:map lsp-mode-map
 	      ("<tab>" . company-indent-or-complete-common)))
   :custom
-  (company-minimum-prefix--length 1)
+  (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
 
-(use-package company-box
-  :hook (company-mode . company-box-mode))
+(setq eglot-completion-function #'ivy-completion-at-point)
 
-(use-package typescript-mode
-  :mode "\\.ts\\'"
-  :hook (typescript-mode . lsp-deferred)
-  :config
-  (setq typescript-indent-level 2))
+(add-hook 'eglot--managed-mode-hook (lambda () (setq-local company-backends '(company-capf))))
+(add-hook 'after-init-hook 'global-company-mode)
 
-;; (add-to-list 'lsp-language-id-configuration '(nix-mode . "nix"))
-;; (lsp-register-client
-;;  (make-lsp-client :new-connection (lsp-stdio-connection '("rnix-lsp"))
-;; 		   :major-modes '(nix-mode)
-;; 		   :server 'nix))
+(setq eglot-history-length 100)
+(setq eglot-history-file "~/.emacs.d/eglot-history")
+
+
+;; (defun sgk/lsp-mode-setup ()
+;;   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+;;   (lsp-headerline-breadcrumb-mode))
+
+;; (use-package lsp-mode
+;;   :hook 
+;;   (lsp-mode . sgk/lsp-mode-setup)
+;;   :init
+;;   (setq lsp-keymap-prefix "C-c l")
+;;   :config
+;;   (lsp-enable-which-key-integration t)
+;;   :commands (lsp lsp-deferred))
+
+;; (use-package lsp-ui
+;;   :hook (lsp-mode . lsp-ui-mode)
+;;   :custom
+;;   (setq lsp-ui-doc-position 'bottom)
+;;   (setq lsp-ui-sideline-enable t)
+;;   (setq lsp-ui-sideline-show-hover t))
+
+
+;; (use-package lsp-ivy
+;;   :after lsp
+;;   :commands lsp-ivy-workspace-symbol)
+
+;; (use-package lsp-treemacs
+;;   :commands lsp-treemacs-errors-list)
+
+;; (use-package company
+;;   :after lsp-mode
+;;   :hook (prog-mode . company-mode)
+;;   :bind
+;;   (:map company-active-map
+;; 	("<tab>" . company-complete-selection)
+;; 	(:map lsp-mode-map
+;; 	      ("<tab>" . company-indent-or-complete-common)))
+;;   :custom
+;;   (company-minimum-prefix--length 1)
+;;   (company-idle-delay 0.0))
+
+;; (use-package company-box
+;;   :hook (company-mode . company-box-mode))
+
+
 
 ;; Org mode
 (use-package org

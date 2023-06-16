@@ -6,7 +6,7 @@
  '(custom-safe-themes
    '("944d52450c57b7cbba08f9b3d08095eb7a5541b0ecfb3a0a9ecd4a18f3c28948" default))
  '(package-selected-packages
-   '(typescript-mode company-box company lsp-treemacs lsp-ivy lsp-ui lsp-mode counsel-projectile projectile magit ivy-rich counsel swiper which-key evil-collection evil general rainbow-delimiters doom-modeline all-the-icons doom-themes use-package)))
+   '(eglot rust-mode typescript-mode company-box company lsp-treemacs lsp-ivy lsp-ui lsp-mode counsel-projectile projectile magit ivy-rich counsel swiper which-key evil-collection evil general rainbow-delimiters doom-modeline all-the-icons doom-themes use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
