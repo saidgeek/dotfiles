@@ -148,6 +148,8 @@
   :init
   (when (file-directory-p "~/develop")
     (setq projectile-project-search-path '("~/develop/")))
+  (when (file-directory-p "~/projects")
+    (setq projectile-project-search-path '("~/projects" "~/projects/saigeek" ("~/projects/latamXP" . 2) "~/projects/lab" "~/projects/utils")))
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile
@@ -184,9 +186,7 @@
   :hook (prog-mode . company-mode)
   :bind
   (:map company-active-map
-	("<tab>" . company-complete-selection)
-	(:map lsp-mode-map
-	      ("<tab>" . company-indent-or-complete-common)))
+	("<tab>" . company-complete-selection))
   :custom
   (company-minimum-prefix-length 1)
   (company-idle-delay 0.0))
