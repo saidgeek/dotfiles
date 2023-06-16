@@ -18,7 +18,7 @@
 (dolist (mode '(org-mode-hook
 		term-mode-hook
 		eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-number-mode 0))))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (electric-pair-mode 1)
 (hl-line-mode 1)
@@ -28,7 +28,8 @@
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa/")
-			 ("elpa" . "https://elpa.gnu.org/packages/")))(package-initialize)
+			 ("elpa" . "https://elpa.gnu.org/packages/")))
+(package-initialize)
 
 (unless package-archive-contents
   (package-refresh-contents))
@@ -149,5 +150,63 @@
   :after projectile
   :config (counsel-projectile-mode))
 
+;; develop
+;;;; LSP
+
+(defun sgk/lsp-mode-setup ()
+  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+  (lsp-headerline-breadcrumb-mode))
+
+(use-package lsp-mode
+  :hook (lsp-mode . sgk/lsp-mode-setup)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :config
+  (lsp-enable-which-key-integration t)
+  :commands (lsp lsp-deferred))
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode)
+  :custom
+  (setq lsp-ui-doc-position 'bottom)
+  (setq lsp-ui-sideline-enable t)
+  (setq lsp-ui-sideline-show-hover t))
+
+
+(use-package lsp-ivy
+  :after lsp
+  :commands lsp-ivy-workspace-symbol)
+
+(use-package lsp-treemacs
+  :commands lsp-treemacs-errors-list)
+
+(use-package company
+  :after lsp-mode
+  :hook (prog-mode . company-mode)
+  :bind
+  (:map company-active-map
+	("<tab>" . company-complete-selection)
+	(:map lsp-mode-map
+	      ("<tab>" . company-indent-or-complete-common)))
+  :custom
+  (company-minimum-prefix--length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :hook (typescript-mode . lsp-deferred)
+  :config
+  (setq typescript-indent-level 2))
+
+;; (add-to-list 'lsp-language-id-configuration '(nix-mode . "nix"))
+;; (lsp-register-client
+;;  (make-lsp-client :new-connection (lsp-stdio-connection '("rnix-lsp"))
+;; 		   :major-modes '(nix-mode)
+;; 		   :server 'nix))
+
+;; Org mode
 (use-package org
   :pin org)
