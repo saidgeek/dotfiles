@@ -100,7 +100,7 @@
   ("C-c p" . projectile-command-map)
   :init
   (when (file-directory-p "~/develop")
-    (setq projectile-project-search-path '("~/develop/")))
+    (setq projectile-project-search-path '("~/develop" "~/develop/rust" ("~/develop" . 1))))
   (when (file-directory-p "~/projects")
     (setq projectile-project-search-path '("~/projects" "~/projects/saigeek" ("~/projects/latamXP" . 2) "~/projects/lab" "~/projects/utils")))
   (setq projectile-switch-project-action #'projectile-dired))
@@ -109,7 +109,18 @@
   :after projectile
   :config (counsel-projectile-mode))
 
+(use-package perspective
+  :ensure t
+  :bind
+  ("C-x C-b" . persp-list-buffers)         ; or use a nicer switcher, see below
+  :custom
+  (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
+  :init
+  (persp-mode))
+
 (use-package magit :ensure t)
+
+(use-package multi-vterm :ensure t)
 
 (use-package eglot
   :ensure t
@@ -311,4 +322,16 @@
     :global-prefix "C-SPC")
 
   (efs/leader-keys
-    "t"  '(:ignore t :which-key "toggles")))
+    ;; Projectile
+    "e"  '(projectile-switch-project :which-key "Projectile projects")
+    "f"  '(projectile-find-file :which-key "Projectile projects")
+    ;; Vterm
+    "t c"  '(multi-vterm :which-key "Terminal")
+    "t n"  '(multi-vterm-next :which-key "Terminal next")
+    "t p"  '(multi-vterm-prev :which-key "Terminal prev")
+    "t r"  '(multi-vterm-rename :which-key "Terminal rename")
+    ;; Perspective
+    "p c" '(persp-switch :whish-key "Perspective switch")
+    "p n" '(persp-next :whish-key "Perspective next")
+    "p p" '(persp-prev :whish-key "Perspective prev")
+    "p r" '(persp-rename :whish-key "Perspective rename")))

@@ -169,7 +169,7 @@ Before add ~nerd-icons~ run this command ~M-x nerd-icons-install-fonts RET~
   ("C-c p" . projectile-command-map)
   :init
   (when (file-directory-p "~/develop")
-    (setq projectile-project-search-path '("~/develop/")))
+    (setq projectile-project-search-path '("~/develop" "~/develop/rust" ("~/develop" . 1))))
   (when (file-directory-p "~/projects")
     (setq projectile-project-search-path '("~/projects" "~/projects/saigeek" ("~/projects/latamXP" . 2) "~/projects/lab" "~/projects/utils")))
   (setq projectile-switch-project-action #'projectile-dired))
@@ -179,12 +179,31 @@ Before add ~nerd-icons~ run this command ~M-x nerd-icons-install-fonts RET~
   :config (counsel-projectile-mode))
 #+end_src
 
+*** Perspective
+
+#+begin_src emacs-lisp
+(use-package perspective
+  :ensure t
+  :bind
+  ("C-x C-b" . persp-list-buffers)         ; or use a nicer switcher, see below
+  :custom
+  (persp-mode-prefix-key (kbd "C-c M-p"))  ; pick your own prefix key here
+  :init
+  (persp-mode))
+#+end_src
+
 ** Dev environment
 
 *** Magit
 
 #+begin_src emacs-lisp
 (use-package magit :ensure t)
+#+end_src
+
+*** vterm
+
+#+begin_src emacs-lisp
+(use-package multi-vterm :ensure t)
 #+end_src
 
 ** LSP
@@ -448,16 +467,28 @@ For a complete experience, add this other extensions to evil
 *** General
 
 #+begin_src emacs-lisp
-(use-package general
-  :ensure t
-  :after evil
-  :config
-  (general-create-definer efs/leader-keys
-    :keymaps '(normal insert visual emacs)
-    :prefix "SPC"
-    :global-prefix "C-SPC")
+  (use-package general
+    :ensure t
+    :after evil
+    :config
+    (general-create-definer efs/leader-keys
+      :keymaps '(normal insert visual emacs)
+      :prefix "SPC"
+      :global-prefix "C-SPC")
 
-  (efs/leader-keys
-    "t"  '(:ignore t :which-key "toggles")))
+    (efs/leader-keys
+      ;; Projectile
+      "e"  '(projectile-switch-project :which-key "Projectile projects")
+      "f"  '(projectile-find-file :which-key "Projectile projects")
+      ;; Vterm
+      "t c"  '(multi-vterm :which-key "Terminal")
+      "t n"  '(multi-vterm-next :which-key "Terminal next")
+      "t p"  '(multi-vterm-prev :which-key "Terminal prev")
+      "t r"  '(multi-vterm-rename :which-key "Terminal rename")
+      ;; Perspective
+      "p c" '(persp-switch :whish-key "Perspective switch")
+      "p n" '(persp-next :whish-key "Perspective next")
+      "p p" '(persp-prev :whish-key "Perspective prev")
+      "p r" '(persp-rename :whish-key "Perspective rename")))
 #+end_src
 
