@@ -8,6 +8,6 @@ return {
 	end,
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>t", ":TodoTelescope<cr>" },
+		{ "<leader>t", ":TodoTelescope<cr>", desc = "Find TODOS!", silent = true },
 	},
 }

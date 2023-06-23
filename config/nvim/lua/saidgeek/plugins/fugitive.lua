@@ -1,6 +1,7 @@
 return {
   "tpope/vim-fugitive",
   keys = {
+    { "<leader>gg", ":Git<cr>", desc = "Git status" },
     { "<leader>ga", ":Git fetch --all -p<cr>", desc = "Git fetch" },
     { "<leader>gl", ":Git pull<cr>", desc = "Git pull" },
     { "<leader>gdh", ":diffget //2<cr>", desc = "Git diff grab from left" },

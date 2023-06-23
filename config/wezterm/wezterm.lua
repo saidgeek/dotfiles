@@ -20,11 +20,13 @@ config.window_padding = {
 config.initial_cols = 110
 config.initial_rows = 30
 -- config.window_decorations = "NONE"
-config.front_end = "OpenGL"
+-- config.front_end = "OpenGL"
+config.front_end = "WebGpu"
+config.enable_wayland = true
 
 config.color_scheme = "Catppuccin Macchiato"
 config.default_prog = { "tmux", "new-session", "-A", "-s", "Main" }
 
-config.warn_about_missing_glyphs = false
+config.warn_about_missing_glyphs = true
 
 return config

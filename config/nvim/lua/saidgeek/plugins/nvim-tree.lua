@@ -1,16 +1,16 @@
 return {
 	"nvim-tree/nvim-tree.lua",
+  event = "VeryLazy",
 	keys = {
-		{ "<leader>e", ":NvimTreeToggle<CR>" },
+		{ "<leader>e", ":NvimTreeToggle<CR>", desc = "NvimTree", silent = true },
 	},
-	cmd = "NvimTreeToggle",
 	config = function()
 		require("nvim-tree").setup({
 			disable_netrw = true,
 			view = {
 				adaptive_size = true,
-				width = 40,
-				side = "right",
+				width = 45,
+				side = "left",
 			},
 			renderer = {
 				highlight_opened_files = "all",
@@ -19,6 +19,7 @@ return {
 				},
 				icons = {
 					glyphs = {
+            -- TODO: change icons!
 						git = {
 							unstaged = "",
 							staged = "",

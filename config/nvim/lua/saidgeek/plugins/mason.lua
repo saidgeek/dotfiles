@@ -26,7 +26,7 @@ return {
 				"emmet_ls",
 				"jsonls",
 				"remark_ls",
-				"rust_analyzer",
+				-- "rust_analyzer",
 				"svelte",
 				"taplo",
 			},

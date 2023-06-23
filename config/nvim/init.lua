@@ -1,3 +1,5 @@
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
 require("saidgeek.core.options")
 
 -- FIXME: see why the theme load retarded

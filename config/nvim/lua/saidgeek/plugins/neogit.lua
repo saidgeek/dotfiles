@@ -4,7 +4,7 @@ return {
 		{ "nvim-lua/plenary.nvim" },
 	},
 	keys = {
-		{ "<leader>gg", "<cmd>:Neogit<CR>" },
+		{ "<leader>gG", "<cmd>:Neogit<CR>" },
 	},
 	cmd = "Neogit",
 	config = true,

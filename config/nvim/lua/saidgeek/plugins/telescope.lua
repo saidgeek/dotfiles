@@ -10,10 +10,10 @@ return {
 	},
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>ff", ":Telescope find_files<cr>" },
-		{ "<leader>fs", ":Telescope live_grep<cr>" },
+		{ "<leader>f", ":Telescope find_files<cr>", desc = "Find files", silent = true },
+		{ "<leader>s", ":Telescope live_grep<cr>", desc = "Fins text", silent = true },
 		{ "<leader>fc", ":Telescope grep_string<cr>" },
-		{ "<leader>fb", ":Telescope buffers<cr>" },
+		{ "<leader><tab>", ":Telescope buffers<cr>", desc = "Swith buffers", silent = true },
 		{ "<leader>fh", ":Telescope help_tags<cr>" },
 		{ "<leader>fe", ":Telescope file_browser<cr>" },
 		{ "<leader>gc", ":Telescope git_commits<cr>" },
