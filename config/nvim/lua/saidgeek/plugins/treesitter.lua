@@ -34,6 +34,9 @@ return {
 				"astro",
 				"svelte",
 				"rust",
+        "nix",
+        "regex",
+        "markdown_inline",
 			},
 		})
 	end,
