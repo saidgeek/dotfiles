@@ -7,35 +7,42 @@ if wezterm.config_builder then
 end
 
 config.font = wezterm.font("VictorMono Nerd Font", { weight = "Bold" })
-config.font_size = 11.0
+config.font_size = 9.0
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
 config.window_padding = {
-	left = 0,
-	right = 0,
-	top = 0,
-	bottom = 0,
+	left = 5,
+	right = 5,
+	top = 5,
+	bottom = 5,
 }
 
+-- config.window_background_opacity = 0.8
+
 config.window_frame = {
-	border_left_width = "0.2cell",
-	border_right_width = "0.2cell",
-	border_bottom_height = "0.2cell",
-	border_top_height = "0.2cell",
+	border_left_width = "0cell",
+	border_right_width = "0cell",
+	border_bottom_height = "0cell",
+	border_top_height = "0cell",
 	border_left_color = "#232323",
 	border_right_color = "#232323",
 	border_bottom_color = "#232323",
 	border_top_color = "#232323",
 }
 
-config.initial_cols = 150
-config.initial_rows = 35
--- config.window_decorations = "NONE"
-config.front_end = "OpenGL"
+config.initial_cols = 160
+config.initial_rows = 40
+config.window_decorations = "NONE"
+-- config.window_decorations = "RESIZE"
+-- config.front_end = "OpenGL"
 -- config.front_end = "WebGpu"
--- config.enable_wayland = true
+config.enable_wayland = false
 
-config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "Github Dark"
+config.colors = {
+	background = "#22272e",
+}
+-- config.color_scheme = "Catppuccin Macchiato"
 -- config.default_prog = { "tmux", "new-session", "-A", "-s", "Main" }
 
 config.warn_about_missing_glyphs = true
