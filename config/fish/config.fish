@@ -1,48 +1,34 @@
-# config fundle
-source (dirname (status --current-filename))/plugins.fish
-
-set fish_greeting ""
-
-set -gx TERM xterm-256color
-
-# alias
-alias g git
-alias gs "g status"
-alias ga "g add"
-alias gaa "ga ."
-alias gc "g commit"
-alias gca "gc --amend"
-alias gr "g rebase"
-alias gri "gr -i"
-alias gl "g log --oneline"
-
-command -qv nvim && alias v nvim
-
-set -gx EDITOR nvim
-
-set -gx PATH bin $PATH
-set -gx PATH ~/bin $PATH
-set -gx PATH ~/.local/bin $PATH
-set -gx PATH $HOME/.cargo/bin $PATH
-set -gx JQ_LIB_DIR /usr/local/lib
-
-if type -q exa
-  alias ll "exa -a --group-directories-first -l --icons --color=always --git"
-  alias l "ll --no-filesize --no-permissions --no-user --no-time"
+if status is-interactive
+    # Commands to run in interactive sessions can go here
 end
 
-# nvm config
-set -gx NVM_DIR ~/.nvm
-set -gx nvm_prefix $NVM_DIR
+starship init fish | source
+fnm env --use-on-cd | source
+zoxide init fish | source
 
-function __check_nvm --on-variable PWD --description "check nvm use"
-  status --is-command-substitution; and return
+# nvim
+alias n="nvim"
 
-  if test -f .nvmrc; and test -r .nvmrc;
-    nvm use
-  end
-end
+# zoxide
+alias cd="z"
 
-# source (pyenv init --path | psub)
-# source (pyenv virtualenv-init - | psub)
+# exa
+alias l="exa -G --icons -a -s=type --colour=always -H -I '.git|node_modules'"
+alias lt="l -T -L 1"
+alias lt2="l -T -L 2"
+alias lt3="l -T -L 3"
+alias lt4="l -T -L 4"
 
+# git
+alias ga="git add"
+alias gaa="git add ."
+alias g="git status"
+alias gl="git log --oneline"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gcav="git commit --amend --no-verify"
+alias gr="git rebase"
+alias gri="git rebase -i"
+alias gs="git switch"
+alias gsc="git switch"
