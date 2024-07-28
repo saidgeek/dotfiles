@@ -20,14 +20,14 @@ config.window_padding = {
 -- config.window_background_opacity = 0.8
 
 config.window_frame = {
-	border_left_width = "0cell",
-	border_right_width = "0cell",
-	border_bottom_height = "0cell",
-	border_top_height = "0cell",
-	border_left_color = "#232323",
-	border_right_color = "#232323",
-	border_bottom_color = "#232323",
-	border_top_color = "#232323",
+	border_left_width = "0.2cell",
+	border_right_width = "0.2cell",
+	border_bottom_height = "0.1cell",
+	border_top_height = "0.1cell",
+	border_left_color = "#cdcdcd",
+	border_right_color = "#cdcdcd",
+	border_bottom_color = "#cdcdcd",
+	border_top_color = "#cdcdcd",
 }
 
 config.initial_cols = 160
