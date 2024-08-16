@@ -34,7 +34,7 @@
 
 (require 'use-package)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.config/emacs/themes")
 (load-theme 'catppuccin t)
 (setq catppuccin-flavor 'macchiato)
 (catppuccin-reload)
@@ -77,10 +77,7 @@
   (setq ivy-height 20)
   (ivy-mode 1))
 
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
+(use-package ivy-rich)
 
 (use-package swiper :ensure t)
 
@@ -301,7 +298,6 @@
   (evil-set-initial-state 'dashboard-mode 'normal))
 
 (use-package evil-collection
-  :after evil
   :config
   (evil-collection-init))
 

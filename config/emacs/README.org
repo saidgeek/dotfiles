@@ -1,5 +1,5 @@
-#+Property: Header-args :tangle init.el
 #+AUTHOR: saidgeek
+#+Property: Header-args :tangle init.el
 
 * Saidgeek's Emacs settings
 
@@ -64,7 +64,7 @@ This is my Emacs config, is in constant progress...
 After should clone theme into ~~/.emacs.d/themes/~
 
 #+begin_src emacs-lisp
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'custom-theme-load-path "~/.config/emacs/themes")
 (load-theme 'catppuccin t)
 (setq catppuccin-flavor 'macchiato)
 (catppuccin-reload)
@@ -132,10 +132,7 @@ Before add ~nerd-icons~ run this command ~M-x nerd-icons-install-fonts RET~
   (setq ivy-height 20)
   (ivy-mode 1))
 
-(use-package ivy-rich
-  :after ivy
-  :init
-  (ivy-rich-mode 1))
+(use-package ivy-rich)
 #+end_src
 
 *** Swiper
@@ -448,7 +445,6 @@ For a complete experience, add this other extensions to evil
   (evil-set-initial-state 'dashboard-mode 'normal))
 
 (use-package evil-collection
-  :after evil
   :config
   (evil-collection-init))
 #+end_src
