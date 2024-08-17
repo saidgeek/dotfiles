@@ -7,7 +7,7 @@ fnm env --use-on-cd | source
 zoxide init fish | source
 
 # nvim
-alias n="nvim"
+alias nv="nvim"
 
 # zoxide
 alias cd="z"
@@ -28,7 +28,10 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gca="git commit --amend"
 alias gcav="git commit --amend --no-verify"
+alias gp="git push"
+alias gpp-"git pull"
 alias gr="git rebase"
 alias gri="git rebase -i"
 alias gs="git switch"
 alias gsc="git switch"
+alias zed="zeditor"
